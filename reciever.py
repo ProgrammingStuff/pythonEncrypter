@@ -1,4 +1,5 @@
 from random import randint
+import random
 
 def sendString(string):
         text_file = open("traffic.txt", "w")
@@ -9,7 +10,7 @@ def getString():
     text_file = open("traffic.txt", "r")
     return text_file.read()
 
-def run(lo1, hi1):
+def run(bits):
 
     values = getString().split("\n")
 
@@ -17,7 +18,7 @@ def run(lo1, hi1):
 
     mod = values[1]
 
-    y = randint(lo1, hi1)
+    y = random.getrandbits(bits)
 
     encryptedKey = (int(shared_key)**y)%int(mod)
 
